@@ -47,7 +47,7 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   tags = {
-    Name = "Terraform-EC2-Instance"
+    Name = "Terraform-jenkins-Instance"
   }
 }
 
