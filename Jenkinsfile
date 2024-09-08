@@ -41,7 +41,7 @@ pipeline {
 
         stage('Terraform Apply') {
             when {
-                expression { env.DESTROY_RESOURCES == 'false' }  // Only apply if not destroying resources
+                expression { env.DESTROY_RESOURCES == 'true' }  // Only apply if not destroying resources
             }
             steps {
                 script {
