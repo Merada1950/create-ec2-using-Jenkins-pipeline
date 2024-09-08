@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2" # Specify the AWS region
+  region = "us-west-1" # Specify the AWS region
 }
 
 # Generate an SSH key pair
