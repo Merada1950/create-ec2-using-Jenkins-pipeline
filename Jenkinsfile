@@ -55,7 +55,7 @@ pipeline {
 
         stage('Terraform Destroy') {
             when {
-                expression { env.DESTROY_RESOURCES == 'true' }  // Destroy resources if the flag is set to true
+                expression { env.DESTROY_RESOURCES == 'false' }  // Destroy resources if the flag is set to true
             }
             steps {
                 script {
