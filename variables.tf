@@ -1,7 +1,7 @@
 variable "key_name" {
   description = "The name for the SSH key pair"
   type        = string
-  default     = "demo-key"
+  default     = "jenkins-key"
 }
 
 variable "ami_id" {
