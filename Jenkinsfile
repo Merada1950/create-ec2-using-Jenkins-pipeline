@@ -1,13 +1,12 @@
-
 pipeline {
     agent any  // Use any available agent
 
     environment {
-        // Define any environment variables here, if needed
+        // Define AWS credentials and destroy flag
         AWS_CREDENTIALS_ID = '339712843218'
         
-        // Set this to 'true' to destroy resources
-        DESTROY_RESOURCES = 'true'
+        // Set this to 'false' to avoid destroying resources
+        DESTROY_RESOURCES = 'false'
     }
 
     stages {
@@ -54,9 +53,9 @@ pipeline {
             }
         }
 
-        /*stage('Terraform Destroy') {
+        stage('Terraform Destroy') {
             when {
-                expression { env.DESTROY_RESOURCES == 'true' }  // Destroy resources if the flag is set
+                expression { env.DESTROY_RESOURCES == 'true' }  // Destroy resources if the flag is set to true
             }
             steps {
                 script {
@@ -66,7 +65,7 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
     }
 
     post {
