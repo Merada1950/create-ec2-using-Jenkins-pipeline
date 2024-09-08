@@ -54,19 +54,19 @@ pipeline {
             }
         }
 
-        stage('Terraform Destroy') {
+        /*stage('Terraform Destroy') {
             when {
                 expression { env.DESTROY_RESOURCES == 'true' }  // Destroy resources if the flag is set
             }
-            /*steps {
+            steps {
                 script {
                     echo "Destroying all resources..."
                     withCredentials([aws(credentialsId: "${env.AWS_CREDENTIALS_ID}", region: 'us-west-1')]) {
                         sh 'terraform destroy --auto-approve'
                     }
                 }
-            }*/
-        }
+            }
+        }*/
     }
 
     post {
